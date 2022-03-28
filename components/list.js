@@ -1,3 +1,4 @@
+import Router from "next/router"
 
 const List = ({ users }) => {
   return (
@@ -5,8 +6,10 @@ const List = ({ users }) => {
       {users.map((user) => {
         return (
           <li 
-          className="list-group-item list-group-item-action"
+          className="list-group-item list-group-item-action cursor-pinter"
           key={user.id}
+          style={{cursor: "pointer"}}
+          onClick={() => {Router.push('/users/[id]', `/users/${user.id}`)}}
           >
             <div className="d-flex align-items-center justify-content-between">
               <div className="pl-4">

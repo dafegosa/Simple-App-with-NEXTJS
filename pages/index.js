@@ -24,5 +24,6 @@ export default Index;
 Index.getInitialProps = async () => {
   const res = await fetch('https://reqres.in/api/users');
   const users = await res.json();
+  console.log('USERS', users);
   return {users: users.data};
 }
